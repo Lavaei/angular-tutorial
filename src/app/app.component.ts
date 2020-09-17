@@ -12,22 +12,22 @@ export class AppComponent {
     {
       _id: '1',
       image: '1.jpg',
-      remains: 1
+      remained: 1
     },
     {
       _id: '2',
       image: '2.jpg',
-      remains: 2
+      remained: 2
     },
     {
       _id: '3',
       image: '3.jpg',
-      remains: 0
+      remained: 0
     },
     {
       _id: '4',
       image: '4.jpg',
-      remains: 5
+      remained: 5
     },
   ];
 
