@@ -11,19 +11,23 @@ export class AppComponent {
   products: IProduct[] = [
     {
       _id: '1',
-      image: '1.jpg'
+      image: '1.jpg',
+      remains: 1
     },
     {
       _id: '2',
-      image: '2.jpg'
+      image: '2.jpg',
+      remains: 2
     },
     {
       _id: '3',
-      image: '3.jpg'
+      image: '3.jpg',
+      remains: 0
     },
     {
       _id: '4',
-      image: '4.jpg'
+      image: '4.jpg',
+      remains: 5
     },
   ];
 
