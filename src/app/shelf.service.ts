@@ -1,8 +1,8 @@
-import {HttpClient} from "@angular/common/http";
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
-import {filter, map} from "rxjs/operators";
 import {IProduct} from "./interfaces/IProduct";
+import {IResponse} from "./interfaces/IResponse";
+import {RequestService} from "./request.service";
 
 @Injectable({
   providedIn: 'root'
@@ -10,16 +10,12 @@ import {IProduct} from "./interfaces/IProduct";
 export class ShelfService
 {
 
-  constructor(protected _http: HttpClient)
+  constructor(protected _requestService: RequestService)
   {
   }
 
   getProducts(): Observable<IProduct[]>
   {
-    return this._http.get<{ status: 'success' | 'error', result: IProduct[] }>('assets/resources/products.json')
-      .pipe(
-        filter(response => response.status === 'success'),
-        map(response => response.result)
-      );
+    return this._requestService.get<IResponse<IProduct[]>>('assets/resources/products.json');
   }
 }
