@@ -1,7 +1,8 @@
 import {HttpClient} from "@angular/common/http";
 import { Injectable } from '@angular/core';
+import {MessageService} from "primeng/api";
 import {throwError} from "rxjs";
-import {catchError, filter, map, tap} from "rxjs/operators";
+import {catchError, map, tap} from "rxjs/operators";
 import {IProduct} from "./interfaces/IProduct";
 import {IResponse} from "./interfaces/IResponse";
 
@@ -10,7 +11,8 @@ import {IResponse} from "./interfaces/IResponse";
 })
 export class RequestService {
 
-  constructor(protected _http:HttpClient) { }
+  constructor(protected _http:HttpClient,
+              protected _messageService: MessageService) { }
 
   get<T>(url: string)
   {
@@ -18,17 +20,18 @@ export class RequestService {
       tap(response => {
         if(response.status !== 'success')
         {
-          throw {
-            name: 'Status is not equals to success',
-            message: response.errorMessage
-          };
-
+          throw new Error(response.errorMessage);
         }
       }),
       map(response => response.result),
       catchError(error => {
 
-        console.log("Toast error!");
+        this._messageService.add(
+          {
+            severity: "error",
+            summary: error.message
+          }
+        );
 
         return throwError(error);
       })
