@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {IProduct} from "../interfaces/IProduct";
+import {ShelfService} from "../shelf.service";
 
 @Component({
   selector:    'app-shelf',
@@ -32,8 +33,9 @@ export class ShelfComponent implements OnInit
     },
   ];
 
-  constructor()
+  constructor(protected _shelfService: ShelfService)
   {
+    setInterval(() => console.log(this._shelfService.p1), 1000);
   }
 
   ngOnInit(): void
