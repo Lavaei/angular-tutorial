@@ -1,4 +1,4 @@
-<div class="product p-col-3 p-p-6">
+<div class="product" (click)="onClickHandler($event)">
   <img [src] = "getProductImage(product.image)" />
   <div *ngIf="product.remained" class="remained">{{ product.remained }}</div>
   <div *ngIf="!product.remained" class="remained">ناموجود</div>
