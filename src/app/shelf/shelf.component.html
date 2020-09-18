@@ -1,3 +1,5 @@
 <div class = "container p-grid">
-  <div *ngFor = "let product of products"><app-product></app-product></div>
+  <ng-container *ngFor = "let product of products">
+    <app-product [product]="product"></app-product>
+  </ng-container>
 </div>
