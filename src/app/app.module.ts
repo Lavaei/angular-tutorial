@@ -1,10 +1,10 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { ShelfComponent } from './shelf/shelf.component';
-import { ProductComponent } from './product/product.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {ProductComponent} from './product/product.component';
+import {ShelfComponent} from './shelf/shelf.component';
 
 @NgModule({
   declarations: [
@@ -12,11 +12,13 @@ import { ProductComponent } from './product/product.component';
     ShelfComponent,
     ProductComponent
   ],
-  imports: [
+  imports:      [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers:    [],
+  bootstrap:    [AppComponent]
 })
-export class AppModule { }
+export class AppModule
+{
+}

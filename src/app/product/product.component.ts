@@ -13,7 +13,7 @@ export class ProductComponent implements OnInit {
 
   @Output('onClick') onClick:EventEmitter<{product: IProduct, event: MouseEvent}> = new EventEmitter<{product: IProduct, event: MouseEvent}>();
 
-  constructor(protected _shelfService: ShelfService) { }
+  constructor() { }
 
   ngOnInit(): void {
   }
@@ -25,8 +25,6 @@ export class ProductComponent implements OnInit {
 
   onClickHandler(event: MouseEvent)
   {
-    this._shelfService.p1++;
-
     this.onClick.emit({product: this.product, event});
   }
 }

@@ -5,7 +5,8 @@ import {ShelfService} from "../shelf.service";
 @Component({
   selector:    'app-shelf',
   templateUrl: './shelf.component.html',
-  styleUrls:   ['./shelf.component.scss']
+  styleUrls:   ['./shelf.component.scss'],
+  providers:   [ShelfService]
 })
 export class ShelfComponent implements OnInit
 {
@@ -33,16 +34,15 @@ export class ShelfComponent implements OnInit
     },
   ];
 
-  constructor(protected _shelfService: ShelfService)
+  constructor()
   {
-    setInterval(() => console.log(this._shelfService.p1), 1000);
   }
 
   ngOnInit(): void
   {
   }
 
-  onProductSelected({product, event}: {product: IProduct, event: MouseEvent})
+  onProductSelected({product, event}: { product: IProduct, event: MouseEvent })
   {
     console.log(product, event);
   }

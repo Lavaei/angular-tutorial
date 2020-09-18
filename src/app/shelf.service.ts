@@ -5,7 +5,5 @@ import { Injectable } from '@angular/core';
 })
 export class ShelfService {
 
-  p1: number = 1;
-
   constructor() { }
 }
