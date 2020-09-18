@@ -1,16 +1,1 @@
-<div class = "container p-grid">
-  <div *ngFor = "let product of products" class="product p-col-3 p-p-6">
-    <img [src] = "getProductImage(product.image)" />
-<!--    <div *ngIf="product.remained" class="remained">{{ product.remained }}</div>-->
-<!--    <div *ngIf="!product.remained" class="remained">ناموجود</div>-->
-
-<!--    <div *ngIf="product.remained; else outOfStock" class="remained">{{ product.remained }}</div>-->
-
-<!--    <ng-template #outOfStock>-->
-<!--      <div class="remained">ناموجود</div>-->
-<!--    </ng-template>-->
-
-    <div [hidden]="!product.remained" class="remained">{{ product.remained }}</div>
-    <div [hidden]="product.remained" class="remained">ناموجود</div>
-  </div>
-</div>
+<app-shelf></app-shelf>
