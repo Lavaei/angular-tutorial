@@ -11,11 +11,10 @@ import {ShelfService} from "../shelf.service";
 })
 export class ShelfComponent implements OnInit
 {
-  @ViewChild('container') container: ElementRef;
-
+  backgroundColor      = "#FFFFFF";
   products: IProduct[] = [];
 
-  constructor(protected _shelfService:ShelfService)
+  constructor(protected _shelfService: ShelfService)
   {
     this._shelfService.getProducts().subscribe(
       (products) => this.products = products,
@@ -31,10 +30,14 @@ export class ShelfComponent implements OnInit
 
   onProductSelected({product, event}: { product: IProduct, event: MouseEvent })
   {
-    const CONTAINER: HTMLDivElement = this.container.nativeElement;
-
-    CONTAINER.style.backgroundColor = "#F00";
-
+    if (this.backgroundColor === "#FFFFFF")
+    {
+      this.backgroundColor = "#F00";
+    }
+    else
+    {
+      this.backgroundColor = "#FFFFFF";
+    }
 
     console.log(product, event);
   }
