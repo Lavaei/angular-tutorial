@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {filter, map} from "rxjs/operators";
 import {IProduct} from "../interfaces/IProduct";
 import {ShelfService} from "../shelf.service";
@@ -11,6 +11,7 @@ import {ShelfService} from "../shelf.service";
 })
 export class ShelfComponent implements OnInit
 {
+  @ViewChild('container') container: ElementRef;
 
   products: IProduct[] = [];
 
@@ -26,11 +27,15 @@ export class ShelfComponent implements OnInit
   ngOnInit(): void
   {
 
-
   }
 
   onProductSelected({product, event}: { product: IProduct, event: MouseEvent })
   {
+    const CONTAINER: HTMLDivElement = this.container.nativeElement;
+
+    CONTAINER.style.backgroundColor = "#F00";
+
+
     console.log(product, event);
   }
 

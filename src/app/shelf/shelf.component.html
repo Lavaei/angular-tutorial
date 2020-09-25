@@ -1,4 +1,4 @@
-<div class = "container p-grid">
+<div class = "container p-grid" #container>
   <ng-container *ngFor = "let product of products">
     <app-product [product]="product" (onClick)="onProductSelected($event)" class="p-col-3 p-p-6"></app-product>
   </ng-container>

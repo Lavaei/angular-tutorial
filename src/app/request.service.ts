@@ -1,4 +1,4 @@
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpErrorResponse} from "@angular/common/http";
 import { Injectable } from '@angular/core';
 import {MessageService} from "primeng/api";
 import {throwError} from "rxjs";
@@ -26,12 +26,29 @@ export class RequestService {
       map(response => response.result),
       catchError(error => {
 
-        this._messageService.add(
+        if(error instanceof HttpErrorResponse)
+        {
+          switch (error.status)
           {
-            severity: "error",
-            summary: error.message
+            case 404:
+              this._messageService.add(
+                {
+                  severity: "error",
+                  summary: "Not Found"
+                }
+              );
+              break;
           }
-        );
+        }
+        else
+        {
+          this._messageService.add(
+            {
+              severity: "error",
+              summary: error.message
+            }
+          );
+        }
 
         return throwError(error);
       })
