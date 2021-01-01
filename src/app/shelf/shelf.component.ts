@@ -16,6 +16,11 @@ export class ShelfComponent implements OnInit
 
   constructor(protected _shelfService: ShelfService)
   {
+
+  }
+
+  ngOnInit(): void
+  {
     this._shelfService.getProducts().subscribe(
       (products) => this.products = products,
       error => console.error(error),
@@ -23,7 +28,12 @@ export class ShelfComponent implements OnInit
     );
   }
 
-  ngOnInit(): void
+  ngAfterViewInit()
+  {
+
+  }
+
+  ngOnDestroy()
   {
 
   }
