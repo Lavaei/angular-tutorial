@@ -1,5 +1,5 @@
 import {HttpClientModule} from "@angular/common/http";
-import {NgModule} from '@angular/core';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MessageService} from "primeng/api";
@@ -7,6 +7,7 @@ import {ToastModule} from "primeng/toast";
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
+import {AppService} from "./app.service";
 import {ProductComponent} from './product/product.component';
 import {ShelfComponent} from './shelf/shelf.component';
 import { HeaderComponent } from './header/header.component';
@@ -31,7 +32,15 @@ import { UserWidgetComponent } from './user-widget/user-widget.component';
     MenuComponent,
     UserWidgetComponent,
   ],
-  providers:    [MessageService],
+  providers:    [
+    {
+      provide: APP_INITIALIZER,
+      multi: true,
+      useFactory: (appService: AppService) => () => appService.getInitialData().toPromise(),
+      deps: [AppService]
+    },
+    MessageService
+  ],
   bootstrap:    [AppComponent]
 })
 export class AppModule

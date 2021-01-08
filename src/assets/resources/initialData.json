@@ -1,0 +1,38 @@
+{
+  "status": "success",
+  "result": {
+    "menuItems": [
+      {
+        "_id": "HOME",
+        "title": "خانه",
+        "href": "/"
+      },
+      {
+        "_id": "PRODUCTS",
+        "title": "محصولات",
+        "children": [
+          {
+            "_id": "LAPTOPS",
+            "title": "لپ‌تاپ",
+            "href": "#"
+          },
+          {
+            "_id": "SMARTPHONES",
+            "title": "تلفن هوشمند",
+            "href": "#"
+          }
+        ]
+      },
+      {
+        "_id": "ABOUT",
+        "title": "درباره ما",
+        "href": "/"
+      },
+      {
+        "_id": "CONTACT",
+        "title": "تماس با ما",
+        "href": "/"
+      }
+    ]
+  }
+}

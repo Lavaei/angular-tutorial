@@ -8,39 +8,7 @@ import {IMenuItem} from "../interfaces/IMenuItem";
 })
 export class MenuComponent implements OnInit {
 
-  @Input() items: IMenuItem[] = [
-    {
-      _id: "HOME",
-      title: "خانه",
-      href: "/"
-    },
-    {
-      _id: "PRODUCTS",
-      title: "محصولات",
-      children: [
-        {
-          _id: "LAPTOPS",
-          title: "لپ‌تاپ",
-          href: "#"
-        },
-        {
-          _id: "SMARTPHONES",
-          title: "تلفن هوشمند",
-          href: "#"
-        }
-      ]
-    },
-    {
-      _id: "ABOUT",
-      title: "درباره ما",
-      href: "/"
-    },
-    {
-      _id: "CONTACT",
-      title: "تماس با ما",
-      href: "/"
-    },
-  ];
+  @Input() items: IMenuItem[] = [];
 
   constructor() { }
 

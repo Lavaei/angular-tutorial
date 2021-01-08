@@ -1,7 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
 import {IProduct} from "./interfaces/IProduct";
-import {IResponse} from "./interfaces/IResponse";
 import {RequestService} from "./request.service";
 
 @Injectable({
@@ -16,6 +15,6 @@ export class ShelfService
 
   getProducts(): Observable<IProduct[]>
   {
-    return this._requestService.get<IResponse<IProduct[]>>('assets/resources/products.json');
+    return this._requestService.get<IProduct[]>('assets/resources/products.json');
   }
 }

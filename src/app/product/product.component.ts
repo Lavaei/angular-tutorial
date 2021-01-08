@@ -1,6 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {IProduct} from "../interfaces/IProduct";
-import {ShelfService} from "../shelf.service";
 
 @Component({
   selector: 'app-product',

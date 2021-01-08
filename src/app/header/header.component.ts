@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AppService} from "../app.service";
+import {IMenuItem} from "../interfaces/IMenuItem";
 
 @Component({
   selector: 'app-header',
@@ -7,7 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  get menuItems(): IMenuItem[]
+  {
+    return this._appService.menuItems;
+  }
+
+  constructor(protected _appService:AppService) { }
 
   ngOnInit(): void {
   }
