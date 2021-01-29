@@ -33,6 +33,12 @@
         "title": "تماس با ما",
         "href": "/"
       }
-    ]
+    ],
+    "user": {
+      "_id": "abcd",
+      "firstName": "مصطفی",
+      "lastName": "لوائی",
+      "avatar": "assets/avatars/angular.svg"
+    }
   }
 }

@@ -1,1 +1,10 @@
-<p>user-widget works!</p>
+
+<ng-container *ngIf="user">
+  <a href="#"><img [src]="user.avatar" [alt]="getFullName()" [title]="getFullName()"/></a>
+  <a href="#">خروج</a>
+</ng-container>
+
+<ng-container *ngIf="!user">
+  <a href="#">ورود</a>
+  <a href="#">ثبت‌نام</a>
+</ng-container>

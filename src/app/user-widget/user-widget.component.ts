@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {AppService} from "../app.service";
+import {IUser} from "../interfaces/IUser";
 
 @Component({
   selector: 'app-user-widget',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserWidgetComponent implements OnInit {
 
-  constructor() { }
+  get user(): IUser
+  {
+    return this._appService.user;
+  }
+
+  constructor(protected _appService: AppService) { }
 
   ngOnInit(): void {
   }
 
+  getFullName() : string
+  {
+    return `${this.user.firstName} ${this.user.lastName}`;
+  }
 }
