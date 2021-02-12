@@ -1,0 +1,22 @@
+:host {
+  display: flex;
+  align-items: center;
+  margin-left: 5px;
+}
+
+a {
+  display: block;
+  margin: 0 2px;
+  text-decoration: none;
+  color: #000;
+
+  :visited{
+    color: #000;
+  }
+
+  img.avatar {
+    display: block;
+    width: 32px;
+    height: 32px;
+  }
+}
