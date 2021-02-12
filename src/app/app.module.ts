@@ -8,6 +8,7 @@ import {ToastModule} from "primeng/toast";
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {AppService} from "./app.service";
+import {NotfoundComponent} from "./notfound/notfound.component";
 import {ProductComponent} from './product/product.component';
 import {ShelfComponent} from './shelf/shelf.component';
 import { HeaderComponent } from './header/header.component';
@@ -33,6 +34,7 @@ import { PdpComponent } from './pdp/pdp.component';
     MenuComponent,
     UserWidgetComponent,
     PdpComponent,
+    NotfoundComponent
   ],
   providers:    [
     {
