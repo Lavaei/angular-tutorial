@@ -14,6 +14,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { UserWidgetComponent } from './user-widget/user-widget.component';
+import { PdpComponent } from './pdp/pdp.component';
 
 @NgModule({
   imports:      [
@@ -31,6 +32,7 @@ import { UserWidgetComponent } from './user-widget/user-widget.component';
     FooterComponent,
     MenuComponent,
     UserWidgetComponent,
+    PdpComponent,
   ],
   providers:    [
     {
