@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {IProduct} from "../interfaces/IProduct";
+import {ProductService} from "../product.service";
 
 @Component({
   selector: 'app-pdp',
@@ -9,9 +10,10 @@ import {IProduct} from "../interfaces/IProduct";
 })
 export class PdpComponent implements OnInit {
 
-  product: IProduct;
+  product: IProduct = null;
 
-  constructor(protected _route:ActivatedRoute) { }
+  constructor(protected _route:ActivatedRoute,
+              protected _productService: ProductService) { }
 
   ngOnInit(): void {
     this._route.params.subscribe(
@@ -19,8 +21,10 @@ export class PdpComponent implements OnInit {
     );
   }
 
-  protected getProductDetails(id: string)
+  protected getProductDetails(productID: string)
   {
-    console.log("getProductDetails()")
+    this._productService.getProduct(productID).subscribe(
+      product => this.product = product
+    )
   }
 }

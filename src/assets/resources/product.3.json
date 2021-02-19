@@ -1,0 +1,8 @@
+{
+  "status": "success",
+  "result": {
+    "_id":      "3",
+    "image":    "3.jpg",
+    "remained": 3
+  }
+}
