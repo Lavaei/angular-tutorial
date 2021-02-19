@@ -11,7 +11,7 @@ const routes: Routes = [
     pathMatch: "full"
   },
   {
-    path: "pdp",
+    path: "pdp/:id",
     component: PdpComponent,
     pathMatch: "full"
   },
