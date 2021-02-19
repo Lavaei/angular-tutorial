@@ -1,5 +1,5 @@
-<div class = "container p-grid" [style.backgroundColor]="backgroundColor">
+<div class = "container p-grid">
   <ng-container *ngFor = "let product of products">
-    <app-product [product]="product" (onClick)="onProductSelected($event)" class="p-col-3 p-p-6"></app-product>
+    <app-product [product]="product" class="p-col-3 p-p-6"></app-product>
   </ng-container>
 </div>

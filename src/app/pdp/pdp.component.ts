@@ -4,18 +4,22 @@ import {IProduct} from "../interfaces/IProduct";
 import {ProductService} from "../product.service";
 
 @Component({
-  selector: 'app-pdp',
+  selector:    'app-pdp',
   templateUrl: './pdp.component.html',
-  styleUrls: ['./pdp.component.scss']
+  styleUrls:   ['./pdp.component.scss']
 })
-export class PdpComponent implements OnInit {
+export class PdpComponent implements OnInit
+{
 
   product: IProduct = null;
 
-  constructor(protected _route:ActivatedRoute,
-              protected _productService: ProductService) { }
+  constructor(protected _route: ActivatedRoute,
+              protected _productService: ProductService)
+  {
+  }
 
-  ngOnInit(): void {
+  ngOnInit(): void
+  {
     this._route.params.subscribe(
       params => this.getProductDetails(params.id)
     );
@@ -26,5 +30,10 @@ export class PdpComponent implements OnInit {
     this._productService.getProduct(productID).subscribe(
       product => this.product = product
     )
+  }
+
+  getProductImage(productImage: string): string
+  {
+    return `assets/products/${productImage}`;
   }
 }

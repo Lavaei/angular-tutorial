@@ -11,7 +11,6 @@ import {ShelfService} from "../shelf.service";
 })
 export class ShelfComponent implements OnInit
 {
-  backgroundColor      = "#FFFFFF";
   products: IProduct[] = [];
 
   constructor(protected _shelfService: ShelfService)
@@ -36,20 +35,6 @@ export class ShelfComponent implements OnInit
   ngOnDestroy()
   {
 
-  }
-
-  onProductSelected({product, event}: { product: IProduct, event: MouseEvent })
-  {
-    if (this.backgroundColor === "#FFFFFF")
-    {
-      this.backgroundColor = "#F00";
-    }
-    else
-    {
-      this.backgroundColor = "#FFFFFF";
-    }
-
-    console.log(product, event);
   }
 
 }
