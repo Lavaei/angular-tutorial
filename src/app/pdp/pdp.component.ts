@@ -32,8 +32,15 @@ export class PdpComponent implements OnInit
     )
   }
 
-  getProductImage(productImages: string[]): string
+  getProductImages()
   {
-    return `assets/products/${productImages[0]}`;
+    return this.product.images.map(image => {
+      return  `assets/products/${image}`;
+    });
   }
+
+  //getProductImage(productImages: string[]): string
+  //{
+  //  return `assets/products/${productImages[0]}`;
+  //}
 }

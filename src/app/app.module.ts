@@ -3,6 +3,7 @@ import {APP_INITIALIZER, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MessageService} from "primeng/api";
+import {GalleriaModule} from "primeng/galleria";
 import {ToastModule} from "primeng/toast";
 
 import {AppRoutingModule} from './app-routing.module';
@@ -23,7 +24,8 @@ import { PdpComponent } from './pdp/pdp.component';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    ToastModule
+    ToastModule,
+    GalleriaModule
   ],
   declarations: [
     AppComponent,
