@@ -2,7 +2,12 @@
   "status": "success",
   "result": {
     "_id":      "3",
-    "image":    "3.jpg",
+    "images":    [
+      "3.jpg",
+      "1.jpg",
+      "2.jpg",
+      "4.jpg"
+    ],
     "remained": 3
   }
 }

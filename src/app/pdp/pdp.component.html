@@ -2,7 +2,7 @@
   <div *ngIf = "!product">Loading...</div>
 
   <div class="product" *ngIf = "product">
-      <img [src] = "getProductImage(product.image)" />
+      <img [src] = "getProductImage(product.images)" />
       <div *ngIf="product.remained" class="remained">{{ product.remained }}</div>
       <div *ngIf="!product.remained" class="remained">ناموجود</div>
   </div>

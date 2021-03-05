@@ -17,9 +17,9 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  getProductImage(productImage: string): string
+  getProductImage(productImages: string[]): string
   {
-    return `assets/products/${productImage}`;
+    return `assets/products/${productImages[0]}`;
   }
 
   onClickHandler(event: MouseEvent)

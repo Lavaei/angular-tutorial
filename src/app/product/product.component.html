@@ -1,5 +1,5 @@
 <div class="product" (click)="onClickHandler($event)" [routerLink]="['pdp', product._id]">
-  <img [src] = "getProductImage(product.image)" />
+  <img [src] = "getProductImage(product.images)" />
   <div *ngIf="product.remained" class="remained">{{ product.remained }}</div>
   <div *ngIf="!product.remained" class="remained">ناموجود</div>
 </div>

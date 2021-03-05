@@ -32,8 +32,8 @@ export class PdpComponent implements OnInit
     )
   }
 
-  getProductImage(productImage: string): string
+  getProductImage(productImages: string[]): string
   {
-    return `assets/products/${productImage}`;
+    return `assets/products/${productImages[0]}`;
   }
 }
