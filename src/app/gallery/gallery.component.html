@@ -1,0 +1,9 @@
+<p-galleria [value]="images">
+  <ng-template pTemplate="item" let-item>
+    <img [src]="item.src" [alt]="item.title" width="100%" />
+  </ng-template>
+
+  <ng-template pTemplate="thumbnail" let-item>
+    <img [src]="item.src" [alt]="item.title" width="100%" />
+  </ng-template>
+</p-galleria>

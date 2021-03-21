@@ -35,7 +35,10 @@ export class PdpComponent implements OnInit
   getProductImages()
   {
     return this.product.images.map(image => {
-      return  `assets/products/${image}`;
+      return {
+        title: this.product._id,
+        src:   `assets/products/${image}`,
+      };
     });
   }
 

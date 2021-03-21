@@ -17,6 +17,8 @@ import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
 import { UserWidgetComponent } from './user-widget/user-widget.component';
 import { PdpComponent } from './pdp/pdp.component';
+import { GalleryComponent } from './gallery/gallery.component';
+import { LoadingComponent } from './loading/loading.component';
 
 @NgModule({
   imports:      [
@@ -36,7 +38,9 @@ import { PdpComponent } from './pdp/pdp.component';
     MenuComponent,
     UserWidgetComponent,
     PdpComponent,
-    NotfoundComponent
+    NotfoundComponent,
+    GalleryComponent,
+    LoadingComponent
   ],
   providers:    [
     {
