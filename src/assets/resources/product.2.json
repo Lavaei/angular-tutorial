@@ -2,12 +2,21 @@
   "status": "success",
   "result": {
     "_id": "2",
+		"title": "Apple",
     "images":    [
       "2.jpg",
       "1.jpg",
       "3.jpg",
       "4.jpg"
     ],
-    "remained": 0
+    "remained": 0,
+		"rate": 3,
+		"comments": [
+			{
+				"_id": "1",
+				"userID": "1",
+				"content": "قیمتش زیاده"
+			}
+		]
   }
 }

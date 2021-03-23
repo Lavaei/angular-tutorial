@@ -1,13 +1,16 @@
 {
-  "status": "success",
-  "result": {
-    "_id": "1",
-    "images":    [
-      "1.jpg",
-      "2.jpg",
-      "3.jpg",
-      "4.jpg"
-    ],
-    "remained": 1
-  }
+	"status": "success",
+	"result": {
+		"_id": "1",
+		"title": "Lenovo",
+		"images": [
+			"1.jpg",
+			"2.jpg",
+			"3.jpg",
+			"4.jpg"
+		],
+		"remained": 1,
+		"rate": 2,
+		"comments": []
+	}
 }

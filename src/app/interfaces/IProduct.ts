@@ -1,6 +1,11 @@
+import {IComment} from "./IComment";
+
 export interface IProduct
 {
-  _id: string;
-  images: string[];
-  remained: number;
+	_id: string;
+	title: string;
+	images: string[];
+	remained: number;
+	rate?: number;
+	comments?: IComment[]
 }
