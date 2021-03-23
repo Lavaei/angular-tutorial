@@ -1,3 +1,21 @@
-.gallery{
-  width: 300px;
+.product{
+	display: flex;
+
+	.gallery{
+		width: 300px;
+	}
+
+	.details{
+		padding: 3rem;
+
+		.title{
+			font-weight: bold;
+		}
+
+		.remained{
+			color: #F00
+		}
+	}
 }
+
+

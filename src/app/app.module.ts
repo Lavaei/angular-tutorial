@@ -1,9 +1,11 @@
 import {HttpClientModule} from "@angular/common/http";
 import {APP_INITIALIZER, NgModule} from '@angular/core';
+import {FormsModule} from "@angular/forms";
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MessageService} from "primeng/api";
 import {GalleriaModule} from "primeng/galleria";
+import {RatingModule} from "primeng/rating";
 import {ToastModule} from "primeng/toast";
 
 import {AppRoutingModule} from './app-routing.module';
@@ -24,10 +26,12 @@ import { LoadingComponent } from './loading/loading.component';
   imports:      [
     BrowserModule,
     BrowserAnimationsModule,
+	  FormsModule,
     AppRoutingModule,
     HttpClientModule,
     ToastModule,
-    GalleriaModule
+    GalleriaModule,
+    RatingModule
   ],
   declarations: [
     AppComponent,

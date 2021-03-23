@@ -16,4 +16,9 @@ export class ProductService {
   {
     return this._requestService.get<IProduct>(`assets/resources/product.${productID}.json`);
   }
+
+  update(productID:string, product: Partial<IProduct>)
+  {
+  	return this._requestService.patch<IProduct>(`assets/resources/product.${productID}.json`, product)
+  }
 }

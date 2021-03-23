@@ -1,13 +1,18 @@
-<div class="container">
-  <app-loading [isLoading]="!product"></app-loading>
+<div class = "container">
+	<app-loading [isLoading] = "!product"></app-loading>
 
-  <div class="product" *ngIf = "product">
+	<div class = "product" *ngIf = "product">
 
-      <div class="gallery">
-        <app-gallery [images]="getProductImages()"></app-gallery>
-      </div>
+		<div class = "gallery">
+			<app-gallery [images] = "getProductImages()"></app-gallery>
+		</div>
 
-      <div *ngIf="product.remained" class="remained">{{ product.remained }}</div>
-      <div *ngIf="!product.remained" class="remained">ناموجود</div>
-  </div>
+		<div class = "details">
+			<div class="title">{{product.title}}</div>
+			<div *ngIf = "!product.remained" class = "remained">ناموجود</div>
+
+			<p-rating [(ngModel)]="product.rate" [cancel]="false" [readonly]="!user" (onRate)="onRateHandler($event)"></p-rating>
+		</div>
+
+	</div>
 </div>

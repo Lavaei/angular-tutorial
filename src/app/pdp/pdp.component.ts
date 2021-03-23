@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+import {AppService} from "../app.service";
 import {IProduct} from "../interfaces/IProduct";
 import {ProductService} from "../product.service";
 
@@ -13,7 +14,13 @@ export class PdpComponent implements OnInit
 
   product: IProduct = null;
 
+  get user()
+  {
+  	return this._appService.user;
+  }
+
   constructor(protected _route: ActivatedRoute,
+              protected _appService:AppService,
               protected _productService: ProductService)
   {
   }
@@ -41,6 +48,13 @@ export class PdpComponent implements OnInit
       };
     });
   }
+
+	onRateHandler(event: {originalEvent: MouseEvent, value: number})
+	{
+		this._productService.update(this.product._id, {rate: event.value}).subscribe(
+			product => this.product = product
+		);
+	}
 
   //getProductImage(productImages: string[]): string
   //{
