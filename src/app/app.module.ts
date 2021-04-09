@@ -4,7 +4,9 @@ import {FormsModule} from "@angular/forms";
 import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MessageService} from "primeng/api";
+import {ButtonModule} from "primeng/button";
 import {GalleriaModule} from "primeng/galleria";
+import {InputTextModule} from "primeng/inputtext";
 import {RatingModule} from "primeng/rating";
 import {ToastModule} from "primeng/toast";
 
@@ -21,18 +23,23 @@ import { UserWidgetComponent } from './user-widget/user-widget.component';
 import { PdpComponent } from './pdp/pdp.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { LoadingComponent } from './loading/loading.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
-  imports:      [
-    BrowserModule,
-    BrowserAnimationsModule,
-	  FormsModule,
-    AppRoutingModule,
-    HttpClientModule,
-    ToastModule,
-    GalleriaModule,
-    RatingModule
-  ],
+	imports: [
+		BrowserModule,
+		BrowserAnimationsModule,
+		FormsModule,
+		AppRoutingModule,
+		HttpClientModule,
+		ToastModule,
+		GalleriaModule,
+		RatingModule,
+		InputTextModule,
+		ButtonModule
+	],
   declarations: [
     AppComponent,
     ShelfComponent,
@@ -44,7 +51,10 @@ import { LoadingComponent } from './loading/loading.component';
     PdpComponent,
     NotfoundComponent,
     GalleryComponent,
-    LoadingComponent
+    LoadingComponent,
+    LoginComponent,
+    RegisterComponent,
+    ProfileComponent
   ],
   providers:    [
     {
