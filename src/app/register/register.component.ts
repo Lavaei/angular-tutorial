@@ -42,7 +42,7 @@ export class RegisterComponent implements OnInit
 	//register(confirm:string)
 	register()
 	{
-		console.log(this.formGroup.value);
+		console.log(this.formGroup.get('phone').value);
 
 		//if(this.confirm !== this.user.password)
 		//{

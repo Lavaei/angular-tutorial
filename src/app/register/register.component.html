@@ -2,26 +2,31 @@
 	<div class = "p-field">
 		<label for="register_phone">تلفن همراه</label>
 		<input id="register_phone" type="tel" formControlName="phone" pInputText required >
+		<span *ngIf="formGroup.get('phone').invalid && formGroup.get('phone').touched">مقدار وارد شده صحیح نمی باشد</span>
 	</div>
 
 	<div class = "p-field">
 		<label for="register_firstname">نام</label>
-		<input id="register_firstname" formControlName="firstName" type="text" pInputText >
+		<input id="register_firstname" formControlName="firstName" type="text" pInputText required>
+		<span *ngIf="formGroup.get('firstName').invalid && formGroup.get('firstName').touched">مقدار وارد شده صحیح نمی باشد</span>
 	</div>
 
 	<div class = "p-field">
 		<label for="register_lastname">نام خانوادگی</label>
-		<input id="register_lastname" formControlName="lastName" type="text" pInputText >
+		<input id="register_lastname" formControlName="lastName" type="text" pInputText required>
+		<span *ngIf="formGroup.get('lastName').invalid && formGroup.get('lastName').touched">مقدار وارد شده صحیح نمی باشد</span>
 	</div>
 
 	<div class = "p-field">
 		<label for="register_password">رمزعبور</label>
-		<input id="register_password" formControlName="password" type="password" pInputText >
+		<input id="register_password" formControlName="password" type="password" pInputText required>
+		<span *ngIf="formGroup.get('password').invalid && formGroup.get('password').touched">مقدار وارد شده صحیح نمی باشد</span>
 	</div>
 
 	<div class = "p-field">
 		<label for="register_password_confirm">تکرار رمز عبور</label>
-		<input id="register_password_confirm" type="password"  formControlName="confirm" pInputText >
+		<input id="register_password_confirm" type="password"  formControlName="confirm" pInputText required>
+		<span *ngIf="formGroup.get('confirm').invalid && formGroup.get('confirm').touched">مقدار وارد شده صحیح نمی باشد</span>
 	</div>
 
 	<div class = "p-field">
