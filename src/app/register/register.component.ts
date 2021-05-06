@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {FormControl, FormGroup} from "@angular/forms";
 import {IUser} from "../interfaces/IUser";
 
 @Component({
@@ -9,16 +10,26 @@ import {IUser} from "../interfaces/IUser";
 export class RegisterComponent implements OnInit
 {
 
-	user: IUser = {
-		_id:       null,
-		phone:     '0930',
-		firstName: '',
-		lastName:  '',
-		password:  '',
-		avatar:    '',
-	};
+	//user: IUser = {
+	//	_id:       null,
+	//	phone:     '0930',
+	//	firstName: '',
+	//	lastName:  '',
+	//	password:  '',
+	//	avatar:    '',
+	//};
 
-	confirm: string;
+	//confirm: string;
+
+	formGroup: FormGroup = new FormGroup(
+		{
+			phone:     new FormControl(''),
+			firstName: new FormControl(''),
+			lastName:  new FormControl(''),
+			password:  new FormControl(''),
+			confirm:   new FormControl(''),
+		}
+	);
 
 	constructor()
 	{
@@ -31,18 +42,20 @@ export class RegisterComponent implements OnInit
 	//register(confirm:string)
 	register()
 	{
-		if(this.confirm !== this.user.password)
-		{
-			console.log("Password and its confirm are not same");
-			return;
-		}
+		console.log(this.formGroup.value);
 
+		//if(this.confirm !== this.user.password)
+		//{
+		//	console.log("Password and its confirm are not same");
+		//	return;
+		//}
+		//
 		//if(confirm !== this.user.password)
 		//{
 		//	console.log("Password and its confirm are not same");
 		//	return;
 		//}
-
-		console.log(this.user);
+		//
+		//console.log(this.user);
 	}
 }
