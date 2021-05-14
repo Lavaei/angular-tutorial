@@ -60,4 +60,41 @@ export class RegisterComponent implements OnInit
 		//
 		//console.log(this.user);
 	}
+
+	shouldShowPhoneRequiredError(): boolean
+	{
+		return this.formGroup.get('phone').getError('required') && this.formGroup.get('phone').touched;
+	}
+
+	shouldShowPhonePatternError(): boolean
+	{
+		return this.formGroup.get('phone').getError('pattern') && this.formGroup.get('phone').touched;
+	}
+
+	shouldShowFirstNameRequiredError(): boolean
+	{
+		return this.formGroup.get('firstName').getError('required') && this.formGroup.get('firstName').touched;
+	}
+
+	shouldShowLastNameRequiredError(): boolean
+	{
+		return this.formGroup.get('lastName').getError('required') && this.formGroup.get('lastName').touched;
+	}
+
+	shouldShowPasswordRequiredError(): boolean
+	{
+		return this.formGroup.get('password').getError('required') && this.formGroup.get('password').touched;
+	}
+
+	shouldShowConfirmRequiredError(): boolean
+	{
+		return this.formGroup.get('confirm').getError('required') && this.formGroup.get('confirm').touched;
+	}
+
+	shouldShowConfirmNotMatchError(): boolean
+	{
+		return this.formGroup.getError('password') &&
+			this.formGroup.get('password').touched &&
+			this.formGroup.get('confirm').touched;
+	}
 }
