@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {FormControl, FormGroup} from "@angular/forms";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {ValidatorHelper} from "../classes/ValidatorHelper";
 import {IUser} from "../interfaces/IUser";
 
 @Component({
@@ -23,12 +24,13 @@ export class RegisterComponent implements OnInit
 
 	formGroup: FormGroup = new FormGroup(
 		{
-			phone:     new FormControl(''),
-			firstName: new FormControl(''),
-			lastName:  new FormControl(''),
-			password:  new FormControl(''),
-			confirm:   new FormControl(''),
-		}
+			phone:     new FormControl('', [Validators.required, Validators.pattern(/^09[0-9]{9}$/)]),
+			firstName: new FormControl('', [Validators.required]),
+			lastName:  new FormControl('', [Validators.required]),
+			password:  new FormControl('', [Validators.required]),
+			confirm:   new FormControl('', [Validators.required]),
+		},
+		[ValidatorHelper.password('password', 'confirm')]
 	);
 
 	constructor()
@@ -42,7 +44,7 @@ export class RegisterComponent implements OnInit
 	//register(confirm:string)
 	register()
 	{
-		console.log(this.formGroup.get('phone').value);
+		console.log(this.formGroup.errors);
 
 		//if(this.confirm !== this.user.password)
 		//{
