@@ -4,6 +4,7 @@
 		<input id="register_phone" type="tel" formControlName="phone" pInputText >
 		<span *ngIf="shouldShowPhoneRequiredError()">وارد کردن تلفن‌ همراه اجباری است</span>
 		<span *ngIf="shouldShowPhonePatternError()">تلفن همراه وارد شده صحیح نمی باشد. فرمت صحیح: 09123456789</span>
+		<span *ngIf="shouldShowPhoneNotAvailableError()">شما قبلا ثبت نام نموده اید</span>
 	</div>
 
 	<div class = "p-field">

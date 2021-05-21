@@ -1,4 +1,4 @@
-import {HttpClient, HttpErrorResponse} from "@angular/common/http";
+import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from "@angular/common/http";
 import {Injectable} from '@angular/core';
 import {MessageService} from "primeng/api";
 import {Observable, pipe, throwError, UnaryFunction} from "rxjs";
@@ -17,9 +17,20 @@ export class RequestService
 	{
 	}
 
-	get<T>(url: string): Observable<T>
+	get<T>(url: string, options?: {
+		headers?: HttpHeaders | {
+			[header: string]: string | string[];
+		};
+		observe?: 'body';
+		params?: HttpParams | {
+			[param: string]: string | string[];
+		};
+		reportProgress?: boolean;
+		responseType?: 'json';
+		withCredentials?: boolean;
+	}): Observable<T>
 	{
-		return this._http.get<IResponse<T>>(url).pipe(
+		return this._http.get<IResponse<T>>(url, options).pipe(
 			this.postRequest(),
 		);
 	}
