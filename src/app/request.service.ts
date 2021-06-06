@@ -3,6 +3,7 @@ import {Injectable} from '@angular/core';
 import {MessageService} from "primeng/api";
 import {Observable, pipe, throwError, UnaryFunction} from "rxjs";
 import {catchError, map, tap} from "rxjs/operators";
+import {environment} from "../environments/environment";
 import {IProduct} from "./interfaces/IProduct";
 import {IResponse} from "./interfaces/IResponse";
 
@@ -30,21 +31,41 @@ export class RequestService
 		withCredentials?: boolean;
 	}): Observable<T>
 	{
-		return this._http.get<IResponse<T>>(url, options).pipe(
+		return this._http.get<IResponse<T>>(`${environment.api.url}/${url}`, options).pipe(
 			this.postRequest(),
 		);
 	}
 
 	patch<T>(url: string, body: any | null): Observable<T>
 	{
-		//return this._http.patch<IResponse<T>>(url, body).pipe(
-		//	this.postRequest(),
-		//);
+		return this._http.patch<IResponse<T>>(url, body).pipe(
+			this.postRequest(),
+		);
+	}
 
-		/**
-		 * TODO This line is not a correct way to send PATCH request!!
-		 */
-		return this.get(url);
+	post<T>(url: string, body: any | null): Observable<T>
+	{
+		return this._http.post<IResponse<T>>(url, body).pipe(
+			this.postRequest(),
+		);
+	}
+
+	delete<T>(url: string, options?: {
+		headers?: HttpHeaders | {
+			[header: string]: string | string[];
+		};
+		observe?: 'body';
+		params?: HttpParams | {
+			[param: string]: string | string[];
+		};
+		reportProgress?: boolean;
+		responseType?: 'json';
+		withCredentials?: boolean
+	}): Observable<T>
+	{
+		return this._http.delete<IResponse<T>>(url, options).pipe(
+			this.postRequest(),
+		);
 	}
 
 	postRequest<T>(): UnaryFunction<Observable<IResponse<T>>, Observable<T>>

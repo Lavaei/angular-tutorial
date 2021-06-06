@@ -21,7 +21,7 @@ export class AppService
 
   getInitialData(): Observable<IInitialData>
   {
-    return this._requestService.get<IInitialData>("assets/resources/initialData.json").pipe(
+    return this._requestService.get<IInitialData>("initial").pipe(
       tap(response => {
         this.user      = response.user;
         this.menuItems = response.menuItems;
