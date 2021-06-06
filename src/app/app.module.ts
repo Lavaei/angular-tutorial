@@ -9,6 +9,7 @@ import {GalleriaModule} from "primeng/galleria";
 import {InputTextModule} from "primeng/inputtext";
 import {RatingModule} from "primeng/rating";
 import {ToastModule} from "primeng/toast";
+import {environment} from "../environments/environment";
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
@@ -19,6 +20,7 @@ import {ShelfComponent} from './shelf/shelf.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { MenuComponent } from './menu/menu.component';
+import {API_URL} from "./tokens";
 import { UserWidgetComponent } from './user-widget/user-widget.component';
 import { PdpComponent } from './pdp/pdp.component';
 import { GalleryComponent } from './gallery/gallery.component';
@@ -64,6 +66,10 @@ import { ProfileComponent } from './profile/profile.component';
       useFactory: (appService: AppService) => () => appService.getInitialData().toPromise(),
       deps: [AppService]
     },
+	  {
+	  	provide: API_URL,
+		  useValue: environment.api.mockUrl
+	  },
     MessageService
   ],
   bootstrap:    [AppComponent]

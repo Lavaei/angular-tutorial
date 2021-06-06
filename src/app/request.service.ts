@@ -1,11 +1,12 @@
 import {HttpClient, HttpErrorResponse, HttpHeaders, HttpParams} from "@angular/common/http";
-import {Injectable} from '@angular/core';
+import {Inject, Injectable} from '@angular/core';
 import {MessageService} from "primeng/api";
 import {Observable, pipe, throwError, UnaryFunction} from "rxjs";
 import {catchError, map, tap} from "rxjs/operators";
 import {environment} from "../environments/environment";
 import {IProduct} from "./interfaces/IProduct";
 import {IResponse} from "./interfaces/IResponse";
+import {API_URL} from "./tokens";
 
 @Injectable({
 	providedIn: 'root'
@@ -14,7 +15,8 @@ export class RequestService
 {
 
 	constructor(protected _http: HttpClient,
-	            protected _messageService: MessageService)
+	            protected _messageService: MessageService,
+	            @Inject(API_URL) protected _apiUrl: string)
 	{
 	}
 
@@ -31,7 +33,7 @@ export class RequestService
 		withCredentials?: boolean;
 	}): Observable<T>
 	{
-		return this._http.get<IResponse<T>>(`${environment.api.url}/${url}`, options).pipe(
+		return this._http.get<IResponse<T>>(`${this._apiUrl}/${url}`, options).pipe(
 			this.postRequest(),
 		);
 	}
