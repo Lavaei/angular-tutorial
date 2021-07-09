@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import {LoginComponent} from "./login/login.component";
 import {NotfoundComponent} from "./notfound/notfound.component";
+import {OnlyGuestsGuard} from "./only-guests.guard";
 import {PdpComponent} from "./pdp/pdp.component";
 import {ProfileComponent} from "./profile/profile.component";
 import {RegisterComponent} from "./register/register.component";
@@ -16,7 +17,8 @@ const routes: Routes = [
 	{
 		path: "user/login",
 		component: LoginComponent,
-		pathMatch: "full"
+		pathMatch: "full",
+		canActivate: [OnlyGuestsGuard]
 	},
 	{
 		path: "user/register",
