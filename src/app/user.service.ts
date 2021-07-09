@@ -11,6 +11,6 @@ export class UserService {
 
 	isPhoneAvailable(phone:string): Observable<boolean>
 	{
-		return this._requestService.get("assets/resources/isPhoneAvailable.json", {params: {phone}})
+		return this._requestService.get("users/isPhoneAvailable", {params: {phone}})
 	}
 }

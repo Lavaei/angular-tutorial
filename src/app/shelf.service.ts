@@ -15,6 +15,6 @@ export class ShelfService
 
   getProducts(): Observable<IProduct[]>
   {
-    return this._requestService.get<IProduct[]>('assets/resources/products.json');
+    return this._requestService.get<IProduct[]>('products');
   }
 }

@@ -14,7 +14,7 @@ export class ProductService {
 
   getProduct(productID: string): Observable<IProduct>
   {
-    return this._requestService.get<IProduct>(`assets/resources/product.${productID}.json`);
+    return this._requestService.get<IProduct>(`products/${productID}`);
   }
 
   update(productID:string, product: Partial<IProduct>)
