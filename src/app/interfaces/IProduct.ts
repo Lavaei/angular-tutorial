@@ -6,6 +6,8 @@ export interface IProduct
 	title: string;
 	images: string[];
 	remained: number;
+	realPrice: number;
+	salePrice: number;
 	rate?: number;
 	comments?: IComment[]
 }

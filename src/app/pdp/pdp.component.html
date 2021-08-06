@@ -12,6 +12,13 @@
 			<div *ngIf = "!product.remained" class = "remained">ناموجود</div>
 
 			<p-rating [(ngModel)]="product.rate" [cancel]="false" [readonly]="!user" (onRate)="onRateHandler($event)"></p-rating>
+
+			<div class="price">
+				<span>قیمت: </span>
+				<span [ngClass]="{'line-through': hasDiscount(), 'bold': !hasDiscount()}">{{product.realPrice | number}}</span>
+				<span [ngClass]="{'bold': hasDiscount()}" *ngIf="hasDiscount()"> {{product.salePrice | number}}</span>
+				<span> تومان</span>
+			</div>
 		</div>
 
 	</div>

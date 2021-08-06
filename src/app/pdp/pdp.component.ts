@@ -55,4 +55,9 @@ export class PdpComponent implements OnInit
 			() => this.product.rate = event.value
 		);
 	}
+
+	hasDiscount()
+	{
+		return this.product.salePrice && this.product.salePrice != this.product.realPrice;
+	}
 }
