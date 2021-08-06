@@ -51,13 +51,8 @@ export class PdpComponent implements OnInit
 
 	onRateHandler(event: {originalEvent: MouseEvent, value: number})
 	{
-		this._productService.update(this.product._id, {rate: event.value}).subscribe(
-			product => this.product = product
+		this._productService.createRate(this.product._id, event.value).subscribe(
+			() => this.product.rate = event.value
 		);
 	}
-
-  //getProductImage(productImages: string[]): string
-  //{
-  //  return `assets/products/${productImages[0]}`;
-  //}
 }

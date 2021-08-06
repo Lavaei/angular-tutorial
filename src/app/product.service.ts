@@ -17,8 +17,8 @@ export class ProductService {
     return this._requestService.get<IProduct>(`products/${productID}`);
   }
 
-  update(productID:string, product: Partial<IProduct>)
+  createRate(productID:string, rate: number): Observable<number>
   {
-  	return this._requestService.patch<IProduct>(`assets/resources/product.${productID}.json`, product)
+  	return this._requestService.post<number>(`products/${productID}/rates`, {rate})
   }
 }

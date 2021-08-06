@@ -40,14 +40,14 @@ export class RequestService
 
 	patch<T>(url: string, body: any | null): Observable<T>
 	{
-		return this._http.patch<IResponse<T>>(url, body).pipe(
+		return this._http.patch<IResponse<T>>(`${this._apiUrl}/${url}`, body).pipe(
 			this.postRequest(),
 		);
 	}
 
 	post<T>(url: string, body: any | null): Observable<T>
 	{
-		return this._http.post<IResponse<T>>(url, body).pipe(
+		return this._http.post<IResponse<T>>(`${this._apiUrl}/${url}`, body).pipe(
 			this.postRequest(),
 		);
 	}
@@ -65,7 +65,7 @@ export class RequestService
 		withCredentials?: boolean
 	}): Observable<T>
 	{
-		return this._http.delete<IResponse<T>>(url, options).pipe(
+		return this._http.delete<IResponse<T>>(`${this._apiUrl}/${url}`, options).pipe(
 			this.postRequest(),
 		);
 	}
