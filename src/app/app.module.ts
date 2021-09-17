@@ -9,6 +9,7 @@ import {GalleriaModule} from "primeng/galleria";
 import {InputTextModule} from "primeng/inputtext";
 import {RatingModule} from "primeng/rating";
 import {ToastModule} from "primeng/toast";
+import {TooltipModule} from "primeng/tooltip";
 import {environment} from "../environments/environment";
 
 import {AppRoutingModule} from './app-routing.module';
@@ -41,7 +42,8 @@ import { ProfileComponent } from './profile/profile.component';
 		GalleriaModule,
 		RatingModule,
 		InputTextModule,
-		ButtonModule
+		ButtonModule,
+		TooltipModule
 	],
   declarations: [
     AppComponent,

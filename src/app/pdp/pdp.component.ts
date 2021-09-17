@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {AppService} from "../app.service";
+import {CartService} from "../cart.service";
 import {IProduct} from "../interfaces/IProduct";
 import {ProductService} from "../product.service";
 
@@ -21,7 +22,8 @@ export class PdpComponent implements OnInit
 
   constructor(protected _route: ActivatedRoute,
               protected _appService:AppService,
-              protected _productService: ProductService)
+              protected _productService: ProductService,
+              protected _cartService: CartService)
   {
   }
 
@@ -59,5 +61,12 @@ export class PdpComponent implements OnInit
 	hasDiscount()
 	{
 		return this.product.salePrice && this.product.salePrice != this.product.realPrice;
+	}
+
+	addToCart()
+	{
+		this._cartService.addItem(this.product);
+
+		console.log(this._cartService.getAll());
 	}
 }

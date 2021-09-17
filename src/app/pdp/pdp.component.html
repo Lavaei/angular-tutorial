@@ -19,7 +19,10 @@
 				<span [ngClass]="{'bold': hasDiscount()}" *ngIf="hasDiscount()"> {{product.salePrice | number}}</span>
 				<span> تومان</span>
 			</div>
-		</div>
 
+			<div>
+				<p-button icon="pi pi-shopping-cart" pTooltip="افزودن به سبد خرید" (click)="addToCart()"></p-button>
+			</div>
+		</div>
 	</div>
 </div>
