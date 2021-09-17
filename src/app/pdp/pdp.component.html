@@ -22,6 +22,20 @@
 
 			<div>
 				<p-button icon="pi pi-shopping-cart" pTooltip="افزودن به سبد خرید" (click)="addToCart()"></p-button>
+
+				<div class="quantity-container" *ngIf="shouldShowQuantity()">
+					<p-inputNumber  [showButtons]="true"
+					                [ngModel]="getItemQuantity()"
+					                (ngModelChange)="setItemQuantity($event)"
+					                buttonLayout="vertical"
+					                spinnerMode="vertical"
+					                inputId="quantity"
+					                decrementButtonClass="p-button-danger btn-quantity"
+					                incrementButtonClass="p-button-success btn-quantity"
+					                incrementButtonIcon="pi pi-plus"
+					                decrementButtonIcon="pi pi-minus"  >
+					</p-inputNumber>
+				</div>
 			</div>
 		</div>
 	</div>

@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {AppService} from "../app.service";
 import {CartService} from "../cart.service";
+import {ICartItem} from "../interfaces/ICartItem";
 import {IProduct} from "../interfaces/IProduct";
 import {ProductService} from "../product.service";
 
@@ -66,7 +67,24 @@ export class PdpComponent implements OnInit
 	addToCart()
 	{
 		this._cartService.addItem(this.product);
+	}
 
-		console.log(this._cartService.getAll());
+	shouldShowQuantity(): boolean
+	{
+		const ITEM: ICartItem = this._cartService.getItem(this.product._id);
+
+		return !!ITEM;
+	}
+
+	getItemQuantity(): number
+	{
+		const ITEM: ICartItem = this._cartService.getItem(this.product._id);
+
+		return ITEM ? ITEM.count : 0;
+	}
+
+	setItemQuantity(quantity: number)
+	{
+		this._cartService.updateItem(this.product._id, {count: quantity});
 	}
 }

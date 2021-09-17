@@ -20,6 +20,11 @@ export class CartService
 		return this.cart;
 	}
 
+	getItem(productID: string): ICartItem
+	{
+		return this.cart.find(item => item.product._id === productID);
+	}
+
 	addItem(product: IProduct, count: number = 1): ICartItem
 	{
 		const ITEM: ICartItem = {product, count};
@@ -58,11 +63,20 @@ export class CartService
 			return null;
 		}
 
-		this.cart[INDEX] = {...this.cart[INDEX], ...toUpdate};
+		if(toUpdate.count === 0)
+		{
+			this.removeItem(productID);
 
-		this._saveToLocalStorage();
+			return null;
+		}
+		else
+		{
+			this.cart[INDEX] = {...this.cart[INDEX], ...toUpdate};
 
-		return this.cart[INDEX];
+			this._saveToLocalStorage();
+
+			return this.cart[INDEX];
+		}
 	}
 
 	protected _saveToLocalStorage()

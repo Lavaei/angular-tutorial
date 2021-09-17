@@ -6,6 +6,7 @@ import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {MessageService} from "primeng/api";
 import {ButtonModule} from "primeng/button";
 import {GalleriaModule} from "primeng/galleria";
+import {InputNumberModule} from "primeng/inputnumber";
 import {InputTextModule} from "primeng/inputtext";
 import {RatingModule} from "primeng/rating";
 import {ToastModule} from "primeng/toast";
@@ -43,7 +44,8 @@ import { ProfileComponent } from './profile/profile.component';
 		RatingModule,
 		InputTextModule,
 		ButtonModule,
-		TooltipModule
+		TooltipModule,
+		InputNumberModule
 	],
   declarations: [
     AppComponent,

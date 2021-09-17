@@ -1,23 +1,44 @@
-.product{
+
+.product {
 	display: flex;
 
-	.gallery{
+	.gallery {
 		width: 300px;
 	}
 
-	.details{
+	.details {
 		padding: 3rem;
 
-		.title{
+		.title {
 			font-weight: bold;
 		}
 
-		.remained{
+		.remained {
 			color: #F00
 		}
+
+		.quantity-container{
+			display: inline-block;
+			margin: 0 5px;
+
+			::ng-deep {
+				#quantity {
+					padding: 0.25rem;
+					width: 50px;
+				}
+
+				.btn-quantity{
+					padding: 0.25rem;
+				}
+			}
+		}
+
+
+
+
 	}
 
-	.price{
+	.price {
 
 	}
 }
