@@ -1,0 +1,17 @@
+<table>
+	<tr>
+		<th>قیمت واحد</th>
+		<th>تعداد</th>
+		<th>قیمت کل</th>
+		<th>عملیات</th>
+	</tr>
+	<tr *ngFor="let item of items">
+		<td>{{item.product.salePrice | number}} تومان</td>
+		<td>{{item.count}}</td>
+		<td>{{(item.product.salePrice * item.count)  | number}} تومان</td>
+		<td><i pTooltip="حذف" class="pi pi-times"></i></td>
+	</tr>
+</table>
+
+<div>هزینه حمل: <span>{{shippingPrice | number}}</span> تومان</div>
+<div>مبلغ قابل پرداخت: <span>{{getTotal() | number}}</span> تومان</div>

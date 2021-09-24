@@ -1,6 +1,8 @@
 import {Injectable} from '@angular/core';
+import {Observable} from "rxjs";
 import {ICartItem} from "./interfaces/ICartItem";
 import {IProduct} from "./interfaces/IProduct";
+import {RequestService} from "./request.service";
 
 @Injectable({
 	providedIn: 'root'
@@ -8,9 +10,9 @@ import {IProduct} from "./interfaces/IProduct";
 export class CartService
 {
 	protected readonly localStorageKey: string = 'cart';
-	protected cart: ICartItem[] = [];
+	protected cart: ICartItem[]                = [];
 
-	constructor()
+	constructor(protected _requestService: RequestService)
 	{
 		this._loadFromLocalStorage();
 	}
@@ -31,7 +33,7 @@ export class CartService
 
 		const INDEX: number = this.cart.findIndex(item => item.product._id === product._id);
 
-		if(INDEX === -1)
+		if (INDEX === -1)
 		{
 			this.cart.push(ITEM);
 		}
@@ -63,7 +65,7 @@ export class CartService
 			return null;
 		}
 
-		if(toUpdate.count === 0)
+		if (toUpdate.count === 0)
 		{
 			this.removeItem(productID);
 
@@ -79,6 +81,11 @@ export class CartService
 		}
 	}
 
+	getShippingPrice(): Observable<number>
+	{
+		return this._requestService.get<number>('cart/shipping');
+	}
+
 	protected _saveToLocalStorage()
 	{
 		localStorage.setItem(this.localStorageKey, JSON.stringify(this.cart));
@@ -88,7 +95,7 @@ export class CartService
 	{
 		const VALUE: string = localStorage.getItem(this.localStorageKey);
 
-		if(VALUE)
+		if (VALUE)
 		{
 			this.cart = JSON.parse(VALUE);
 		}

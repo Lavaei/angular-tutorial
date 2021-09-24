@@ -30,6 +30,7 @@ import { LoadingComponent } from './loading/loading.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
+import { CartComponent } from './cart/cart.component';
 
 @NgModule({
 	imports: [
@@ -61,7 +62,8 @@ import { ProfileComponent } from './profile/profile.component';
     LoadingComponent,
     LoginComponent,
     RegisterComponent,
-    ProfileComponent
+    ProfileComponent,
+    CartComponent
   ],
   providers:    [
     {

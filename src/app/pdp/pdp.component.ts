@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {AppService} from "../app.service";
 import {CartService} from "../cart.service";
 import {ICartItem} from "../interfaces/ICartItem";
@@ -22,6 +22,7 @@ export class PdpComponent implements OnInit
   }
 
   constructor(protected _route: ActivatedRoute,
+              protected _router: Router,
               protected _appService:AppService,
               protected _productService: ProductService,
               protected _cartService: CartService)
@@ -86,5 +87,10 @@ export class PdpComponent implements OnInit
 	setItemQuantity(quantity: number)
 	{
 		this._cartService.updateItem(this.product._id, {count: quantity});
+	}
+
+	goToCart()
+	{
+		this._router.navigateByUrl("user/cart");
 	}
 }

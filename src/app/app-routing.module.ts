@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import {CartComponent} from "./cart/cart.component";
 import {LoginComponent} from "./login/login.component";
 import {NotfoundComponent} from "./notfound/notfound.component";
 import {OnlyGuestsGuard} from "./only-guests.guard";
@@ -30,6 +31,12 @@ const routes: Routes = [
 	{
 		path: "user/profile",
 		component: ProfileComponent,
+		pathMatch: "full",
+		canActivate: [OnlyUsersGuard]
+	},
+	{
+		path: "user/cart",
+		component: CartComponent,
 		pathMatch: "full",
 		canActivate: [OnlyUsersGuard]
 	},
