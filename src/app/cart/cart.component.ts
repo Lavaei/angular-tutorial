@@ -38,4 +38,16 @@ export class CartComponent implements OnInit {
 
 		return total;
 	}
+
+	setItemQuantity(productID:string, count: number)
+	{
+		this._cartService.updateItem(productID, {count});
+	}
+
+	removeItem(productID: string)
+	{
+		this._cartService.removeItem(productID);
+
+		this.items = this._cartService.getAll();
+	}
 }

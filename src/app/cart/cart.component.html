@@ -1,15 +1,30 @@
 <table>
 	<tr>
+		<th>ردیف</th>
+		<th>عنوان</th>
 		<th>قیمت واحد</th>
 		<th>تعداد</th>
 		<th>قیمت کل</th>
 		<th>عملیات</th>
 	</tr>
-	<tr *ngFor="let item of items">
+	<tr *ngFor="let item of items; let i=index">
+		<td>{{i + 1}}</td>
+		<td>{{item.product.title}}</td>
 		<td>{{item.product.salePrice | number}} تومان</td>
-		<td>{{item.count}}</td>
+		<td>
+			<p-inputNumber  [showButtons]="true"
+			                [ngModel]="item.count"
+			                (ngModelChange)="setItemQuantity(item.product._id, $event)"
+			                buttonLayout="vertical"
+			                spinnerMode="vertical"
+			                inputId="quantity"
+			                decrementButtonClass="p-button-danger btn-quantity"
+			                incrementButtonClass="p-button-success btn-quantity"
+			                incrementButtonIcon="pi pi-plus"
+			                decrementButtonIcon="pi pi-minus"  ></p-inputNumber>
+		</td>
 		<td>{{(item.product.salePrice * item.count)  | number}} تومان</td>
-		<td><i pTooltip="حذف" class="pi pi-times"></i></td>
+		<td><i pTooltip="حذف" class="pi pi-times" (click)="removeItem(item.product._id)"></i></td>
 	</tr>
 </table>
 
