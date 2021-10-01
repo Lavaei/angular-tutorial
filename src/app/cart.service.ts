@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Observable} from "rxjs";
+import {tap} from "rxjs/operators";
 import {ICartItem} from "./interfaces/ICartItem";
 import {IProduct} from "./interfaces/IProduct";
 import {RequestService} from "./request.service";
@@ -15,6 +16,14 @@ export class CartService
 	constructor(protected _requestService: RequestService)
 	{
 		this._loadFromLocalStorage();
+	}
+
+	getFreshCart(): Observable<ICartItem[]>
+	{
+		return this._requestService.get<ICartItem[]>('cart').pipe(
+			tap(cart => this.cart = cart),
+			tap(() => this._saveToLocalStorage()),
+		);
 	}
 
 	getAll(): ICartItem[]

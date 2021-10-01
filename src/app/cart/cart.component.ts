@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {AngularBankService} from "../angular-bank.service";
+import {BankService} from "../bank.service";
 import {CartService} from "../cart.service";
 import {ICartItem} from "../interfaces/ICartItem";
 
@@ -14,7 +15,7 @@ export class CartComponent implements OnInit {
 	public shippingPrice: number = 0;
 
   constructor(protected _cartService: CartService,
-              protected _angularBankService:AngularBankService) { }
+              protected _bankService:BankService) { }
 
   ngOnInit(): void {
   	this.items = this._cartService.getAll();
@@ -55,7 +56,7 @@ export class CartComponent implements OnInit {
 
 	redirectToGateway()
 	{
-		this._angularBankService.getGatewayUrl().subscribe(
+		this._bankService.getGatewayUrl().subscribe(
 			url => (window as any).location = url,
 			() => console.error("Failed to get Gateway URL.")
 		);

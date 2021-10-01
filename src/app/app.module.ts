@@ -12,10 +12,12 @@ import {RatingModule} from "primeng/rating";
 import {ToastModule} from "primeng/toast";
 import {TooltipModule} from "primeng/tooltip";
 import {environment} from "../environments/environment";
+import {AngularBankService} from "./angular-bank.service";
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {AppService} from "./app.service";
+import {BankService} from "./bank.service";
 import {NotfoundComponent} from "./notfound/notfound.component";
 import {ProductComponent} from './product/product.component';
 import {ShelfComponent} from './shelf/shelf.component';
@@ -77,6 +79,10 @@ import { GatewayResultComponent } from './gateway-result/gateway-result.componen
 	  {
 	  	provide: API_URL,
 		  useValue: environment.api.mockUrl
+	  },
+	  {
+			provide: BankService,
+		  useClass: AngularBankService
 	  },
     MessageService
   ],
