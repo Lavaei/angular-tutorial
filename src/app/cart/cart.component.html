@@ -30,3 +30,5 @@
 
 <div>هزینه حمل: <span>{{shippingPrice | number}}</span> تومان</div>
 <div>مبلغ قابل پرداخت: <span>{{getTotal() | number}}</span> تومان</div>
+
+<p-button label="پرداخت" (click)="redirectToGateway()"></p-button>

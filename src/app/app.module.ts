@@ -31,6 +31,7 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CartComponent } from './cart/cart.component';
+import { GatewayResultComponent } from './gateway-result/gateway-result.component';
 
 @NgModule({
 	imports: [
@@ -63,7 +64,8 @@ import { CartComponent } from './cart/cart.component';
     LoginComponent,
     RegisterComponent,
     ProfileComponent,
-    CartComponent
+    CartComponent,
+    GatewayResultComponent
   ],
   providers:    [
     {

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AngularBankService} from "../angular-bank.service";
 import {CartService} from "../cart.service";
 import {ICartItem} from "../interfaces/ICartItem";
 
@@ -12,7 +13,8 @@ export class CartComponent implements OnInit {
 	public items: ICartItem[] = [];
 	public shippingPrice: number = 0;
 
-  constructor(protected _cartService: CartService) { }
+  constructor(protected _cartService: CartService,
+              protected _angularBankService:AngularBankService) { }
 
   ngOnInit(): void {
   	this.items = this._cartService.getAll();
@@ -50,4 +52,14 @@ export class CartComponent implements OnInit {
 
 		this.items = this._cartService.getAll();
 	}
+
+	redirectToGateway()
+	{
+		this._angularBankService.getGatewayUrl().subscribe(
+			url => (window as any).location = url,
+			() => console.error("Failed to get Gateway URL.")
+		);
+	}
+
+
 }
