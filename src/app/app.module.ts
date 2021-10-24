@@ -8,6 +8,7 @@ import {ButtonModule} from "primeng/button";
 import {GalleriaModule} from "primeng/galleria";
 import {InputNumberModule} from "primeng/inputnumber";
 import {InputTextModule} from "primeng/inputtext";
+import {InputTextareaModule} from "primeng/inputtextarea";
 import {RatingModule} from "primeng/rating";
 import {ToastModule} from "primeng/toast";
 import {TooltipModule} from "primeng/tooltip";
@@ -49,7 +50,8 @@ import { GatewayResultComponent } from './gateway-result/gateway-result.componen
 		InputTextModule,
 		ButtonModule,
 		TooltipModule,
-		InputNumberModule
+		InputNumberModule,
+		InputTextareaModule
 	],
   declarations: [
     AppComponent,
