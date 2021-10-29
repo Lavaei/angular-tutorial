@@ -14,6 +14,11 @@ import {ProductService} from "../product.service";
 export class PdpComponent implements OnInit
 {
 
+	options: {key: string, title: string}[] = [
+		{key: 'value', title: 'ارزش در برابر قیمت'},
+		{key: 'quality', title: 'کیفیت'}
+	];
+
   product: IProduct = null;
 
   get user()

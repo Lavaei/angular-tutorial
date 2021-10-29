@@ -1,0 +1,6 @@
+
+<div *ngFor="let option of options">
+	<h5>{{option.title}}</h5>
+	<p-slider [(ngModel)]="value[option.key]" [min]="1" [max]="5" [step]="1"></p-slider>
+</div>
+

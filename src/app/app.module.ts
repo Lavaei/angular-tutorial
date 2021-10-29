@@ -10,6 +10,7 @@ import {InputNumberModule} from "primeng/inputnumber";
 import {InputTextModule} from "primeng/inputtext";
 import {InputTextareaModule} from "primeng/inputtextarea";
 import {RatingModule} from "primeng/rating";
+import {SliderModule} from "primeng/slider";
 import {ToastModule} from "primeng/toast";
 import {TooltipModule} from "primeng/tooltip";
 import {environment} from "../environments/environment";
@@ -35,6 +36,7 @@ import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { CartComponent } from './cart/cart.component';
 import { GatewayResultComponent } from './gateway-result/gateway-result.component';
+import { RateComponent } from './rate/rate.component';
 
 @NgModule({
 	imports: [
@@ -51,7 +53,8 @@ import { GatewayResultComponent } from './gateway-result/gateway-result.componen
 		ButtonModule,
 		TooltipModule,
 		InputNumberModule,
-		InputTextareaModule
+		InputTextareaModule,
+		SliderModule
 	],
   declarations: [
     AppComponent,
@@ -69,7 +72,8 @@ import { GatewayResultComponent } from './gateway-result/gateway-result.componen
     RegisterComponent,
     ProfileComponent,
     CartComponent,
-    GatewayResultComponent
+    GatewayResultComponent,
+    RateComponent
   ],
   providers:    [
     {
