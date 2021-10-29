@@ -14,6 +14,8 @@ import {ProductService} from "../product.service";
 export class PdpComponent implements OnInit
 {
 
+	rate: {[key:string] : number} = {};
+
 	options: {key: string, title: string}[] = [
 		{key: 'value', title: 'ارزش در برابر قیمت'},
 		{key: 'quality', title: 'کیفیت'}
@@ -97,5 +99,10 @@ export class PdpComponent implements OnInit
 	goToCart()
 	{
 		this._router.navigateByUrl("user/cart");
+	}
+
+	onComment()
+	{
+		console.log(this.rate);
 	}
 }

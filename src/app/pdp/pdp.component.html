@@ -56,11 +56,11 @@
 			</div>
 
 			<div>
-				<app-rate [options]="options"></app-rate>
+				<app-rate [options]="options" [(ngModel)]="rate" name="rate"></app-rate>
 			</div>
 
 			<div>
-				<button pButton label="ثبت"></button>
+				<button pButton label="ثبت" (click)="onComment()"></button>
 			</div>
 		</form>
 	</div>

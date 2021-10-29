@@ -43,4 +43,14 @@
 	}
 }
 
+.comments{
+	width: 300px;
+	margin: 10px;
+
+	> form {
+		> div {
+			margin: 10px 0;
+		}
+	}
+}
 
