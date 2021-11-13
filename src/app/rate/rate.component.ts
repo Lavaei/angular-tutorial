@@ -20,6 +20,7 @@ export class RateComponent implements OnInit, ControlValueAccessor {
 	value: {[key:string] : number} = {};
 
 	onChange = (value: {[key:string] : number}) => {};
+	isDisabled:boolean = false;
 
   constructor() { }
 
@@ -43,7 +44,7 @@ export class RateComponent implements OnInit, ControlValueAccessor {
 
 	setDisabledState(isDisabled: boolean): void
 	{
-
+		this.isDisabled = isDisabled;
 	}
 
 	registerOnTouched(fn: any): void

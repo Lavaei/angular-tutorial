@@ -105,4 +105,9 @@ export class PdpComponent implements OnInit
 	{
 		console.log(this.rate);
 	}
+
+	log(event)
+	{
+		console.log(event);
+	}
 }
