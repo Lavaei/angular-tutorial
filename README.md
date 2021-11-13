@@ -27,7 +27,7 @@
 			- Built-in ✅
 			- Sync ✅
 			- Async ✅
-	- Custom Form Control ⏳
+	- Custom Form Control ✅
 	- Multi-Value Form Controls (Form Array) ⏳
 - Styles ⏳
 	- Animations ⏳
