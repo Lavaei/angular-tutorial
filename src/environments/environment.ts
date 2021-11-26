@@ -4,6 +4,9 @@
 
 export const environment = {
   production: false,
+	client: {
+		url: "http://localhost:4200"
+	},
 	api: {
 		url: "http://localhost:4200",
 		mockUrl: "http://localhost:3000",
