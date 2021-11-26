@@ -37,6 +37,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { CartComponent } from './cart/cart.component';
 import { GatewayResultComponent } from './gateway-result/gateway-result.component';
 import { RateComponent } from './rate/rate.component';
+import { OpenExternalLinksInNewTabDirective } from './open-external-links-in-new-tab.directive';
 
 @NgModule({
 	imports: [
@@ -73,7 +74,8 @@ import { RateComponent } from './rate/rate.component';
     ProfileComponent,
     CartComponent,
     GatewayResultComponent,
-    RateComponent
+    RateComponent,
+    OpenExternalLinksInNewTabDirective
   ],
   providers:    [
     {
