@@ -50,16 +50,6 @@ export class PdpComponent implements OnInit
     )
   }
 
-  getProductImages()
-  {
-    return this.product.images.map(image => {
-      return {
-        title: this.product._id,
-        src:   `assets/products/${image}`,
-      };
-    });
-  }
-
 	onRateHandler(event: {originalEvent: MouseEvent, value: number})
 	{
 		this._productService.createRate(this.product._id, event.value).subscribe(
@@ -109,5 +99,11 @@ export class PdpComponent implements OnInit
 	log(event)
 	{
 		console.log(event);
+	}
+
+	getPriceAsString(price: number): string
+	{
+		console.log('getPriceAsString()')
+		return '11,000,000';
 	}
 }

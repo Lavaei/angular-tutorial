@@ -38,6 +38,7 @@ import { CartComponent } from './cart/cart.component';
 import { GatewayResultComponent } from './gateway-result/gateway-result.component';
 import { RateComponent } from './rate/rate.component';
 import { OpenExternalLinksInNewTabDirective } from './open-external-links-in-new-tab.directive';
+import { ProductImagesPipe } from './product-images.pipe';
 
 @NgModule({
 	imports: [
@@ -75,7 +76,8 @@ import { OpenExternalLinksInNewTabDirective } from './open-external-links-in-new
     CartComponent,
     GatewayResultComponent,
     RateComponent,
-    OpenExternalLinksInNewTabDirective
+    OpenExternalLinksInNewTabDirective,
+    ProductImagesPipe,
   ],
   providers:    [
     {

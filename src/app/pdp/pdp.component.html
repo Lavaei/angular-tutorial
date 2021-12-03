@@ -4,7 +4,7 @@
 	<div class = "product" *ngIf = "product">
 
 		<div class = "gallery">
-			<app-gallery [images] = "getProductImages()"></app-gallery>
+			<app-gallery [images] = "product | productImages"></app-gallery>
 		</div>
 
 		<div class = "details">
