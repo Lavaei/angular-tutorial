@@ -39,6 +39,7 @@ import { GatewayResultComponent } from './gateway-result/gateway-result.componen
 import { RateComponent } from './rate/rate.component';
 import { OpenExternalLinksInNewTabDirective } from './open-external-links-in-new-tab.directive';
 import { ProductImagesPipe } from './product-images.pipe';
+import { TabViewComponent } from './tab-view/tab-view.component';
 
 @NgModule({
 	imports: [
@@ -78,6 +79,7 @@ import { ProductImagesPipe } from './product-images.pipe';
     RateComponent,
     OpenExternalLinksInNewTabDirective,
     ProductImagesPipe,
+    TabViewComponent,
   ],
   providers:    [
     {
