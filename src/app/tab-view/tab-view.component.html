@@ -1,24 +1,3 @@
-<!-- Tab links -->
-<div class="tab">
-	<button *ngFor="let tab of tabs" class="tablinks">{{tab}}</button>
-</div>
+<ng-content select=".tab"></ng-content>
 
-<div class="tabcontent">
-	<ng-content></ng-content>
-</div>
-
-<!-- Tab content -->
-<!--<div id="London" class="tabcontent">-->
-<!--	<h3>Tehran</h3>-->
-<!--	<p>Salam.</p>-->
-<!--</div>-->
-
-<!--<div id="Paris" class="tabcontent">-->
-<!--	<h3>Paris</h3>-->
-<!--	<p>Paris is the capital of France.</p>-->
-<!--</div>-->
-
-<!--<div id="Tokyo" class="tabcontent">-->
-<!--	<h3>Tokyo</h3>-->
-<!--	<p>Tokyo is the capital of Japan.</p>-->
-<!--</div>-->
+<ng-content select=".tabcontent"></ng-content>

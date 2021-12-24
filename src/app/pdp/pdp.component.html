@@ -66,8 +66,15 @@
 	</div>
 
 
-	<app-tab-view [tabs]="['Tehran', 'Karaj', 'Bandar Abbas']">
+	<app-tab-view>
 
+		<div class="tab">
+			<button class="tablinks">Tehran</button>
+			<button class="tablinks">Karaj</button>
+			<button class="tablinks">Bandar Abbas</button>
+		</div>
+
+	<div class="tabcontent">
 		<div id="tehran">
 			<h3>Tehran</h3>
 			<div>Hello Tehran</div>
@@ -82,6 +89,7 @@
 			<h3>Bandar Abbas</h3>
 			<div>Hello Bandar Abbas</div>
 		</div>
+	</div>
 
 	</app-tab-view>
 </div>
