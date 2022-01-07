@@ -1,3 +1,9 @@
-<ng-content select=".tab"></ng-content>
+<div class="tab">
+	<button *ngFor="let tab of tabs" class="tablinks" (click)="setActiveTab(tab)">{{tab.title}}</button>
+</div>
 
-<ng-content select=".tabcontent"></ng-content>
+<div class="tabcontent">
+	<ng-container *ngFor="let tab of tabs">
+		<ng-container *ngIf="isActiveTab(tab)" [ngTemplateOutlet]="tab.templateRef"></ng-container>
+	</ng-container>
+</div>

@@ -42,54 +42,45 @@
 		</div>
 	</div>
 
-	<div class="comments">
-		<form>
 
-			<div class="p-float-label">
-			    <input id="comment-title" type="text" pInputText>
-			    <label for="comment-title">عنوان</label>
-			</div>
-
-
-			<div>
-				<textarea name="content" pInputTextarea></textarea>
-			</div>
-
-			<div>
-				<app-rate [options]="options" [(ngModel)]="rate" name="rate" ></app-rate>
-			</div>
-
-			<div>
-				<button pButton label="ثبت" (click)="onComment()"></button>
-			</div>
-		</form>
-	</div>
 
 
 	<app-tab-view>
+		<app-tab title="توضیحات">
+			A
+		</app-tab>
 
-		<div class="tab">
-			<button class="tablinks">Tehran</button>
-			<button class="tablinks">Karaj</button>
-			<button class="tablinks">Bandar Abbas</button>
-		</div>
+		<app-tab title="مشخصات فنی">
+			B
+		</app-tab>
 
-	<div class="tabcontent">
-		<div id="tehran">
-			<h3>Tehran</h3>
-			<div>Hello Tehran</div>
-		</div>
+		<app-tab title="نظرات کاربران">
+			<div class="comments">
+				<form>
 
-		<div id="karaj">
-			<h3>Karaj</h3>
-			<div>Hello Karaj</div>
-		</div>
+					<div class="p-float-label">
+						<input id="comment-title" type="text" pInputText>
+						<label for="comment-title">عنوان</label>
+					</div>
 
-		<div id="bandar-abbas">
-			<h3>Bandar Abbas</h3>
-			<div>Hello Bandar Abbas</div>
-		</div>
-	</div>
 
+					<div>
+						<textarea name="content" pInputTextarea></textarea>
+					</div>
+
+					<div>
+						<app-rate [options]="options" [(ngModel)]="rate" name="rate" ></app-rate>
+					</div>
+
+					<div>
+						<button pButton label="ثبت" (click)="onComment()"></button>
+					</div>
+				</form>
+			</div>
+		</app-tab>
+
+		<app-tab title="پرسش و پاسخ">
+			D
+		</app-tab>
 	</app-tab-view>
 </div>

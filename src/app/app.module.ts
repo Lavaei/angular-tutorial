@@ -40,6 +40,7 @@ import { RateComponent } from './rate/rate.component';
 import { OpenExternalLinksInNewTabDirective } from './open-external-links-in-new-tab.directive';
 import { ProductImagesPipe } from './product-images.pipe';
 import { TabViewComponent } from './tab-view/tab-view.component';
+import { TabComponent } from './tab/tab.component';
 
 @NgModule({
 	imports: [
@@ -80,6 +81,7 @@ import { TabViewComponent } from './tab-view/tab-view.component';
     OpenExternalLinksInNewTabDirective,
     ProductImagesPipe,
     TabViewComponent,
+    TabComponent,
   ],
   providers:    [
     {
