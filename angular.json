@@ -40,6 +40,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
+							"statsJson": true,
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
