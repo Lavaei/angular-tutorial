@@ -1,10 +1,10 @@
 
 <ng-container *ngIf="user">
-  <a href="#"><img class="avatar" [src]="user.avatar" [alt]="getFullName()" [title]="getFullName()"/></a>
+  <a routerLink="user/profile"><img class="avatar" [src]="user.avatar" [alt]="getFullName()" [title]="getFullName()"/></a>
   <a href="#">خروج</a>
 </ng-container>
 
 <ng-container *ngIf="!user">
-  <a href="#">ورود</a>
-  <a href="#">ثبت‌نام</a>
+  <a href="user/login">ورود</a>
+  <a href="user/register">ثبت‌نام</a>
 </ng-container>

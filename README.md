@@ -8,7 +8,7 @@
 		- Conditions ✅
 		- Loops ✅
 		- Binding ✅
-	- Content Projection ⏳
+	- Content Projection ✅
 	- Dynamic Load ⏳
 - Dependency Injection ✅
 	- Singleton Design Pattern ✅

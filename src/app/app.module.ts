@@ -20,27 +20,23 @@ import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {AppService} from "./app.service";
 import {BankService} from "./bank.service";
+import {FooterComponent} from './footer/footer.component';
+import {GalleryComponent} from './gallery/gallery.component';
+import {GatewayResultComponent} from './gateway-result/gateway-result.component';
+import {HeaderComponent} from './header/header.component';
+import {LoadingComponent} from './loading/loading.component';
+import {MenuComponent} from './menu/menu.component';
 import {NotfoundComponent} from "./notfound/notfound.component";
+import {OpenExternalLinksInNewTabDirective} from './open-external-links-in-new-tab.directive';
+import {PdpComponent} from './pdp/pdp.component';
+import {ProductImagesPipe} from './product-images.pipe';
 import {ProductComponent} from './product/product.component';
+import {RateComponent} from './rate/rate.component';
 import {ShelfComponent} from './shelf/shelf.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
-import { MenuComponent } from './menu/menu.component';
+import {TabViewComponent} from './tab-view/tab-view.component';
+import {TabComponent} from './tab/tab.component';
 import {API_URL} from "./tokens";
-import { UserWidgetComponent } from './user-widget/user-widget.component';
-import { PdpComponent } from './pdp/pdp.component';
-import { GalleryComponent } from './gallery/gallery.component';
-import { LoadingComponent } from './loading/loading.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { ProfileComponent } from './profile/profile.component';
-import { CartComponent } from './cart/cart.component';
-import { GatewayResultComponent } from './gateway-result/gateway-result.component';
-import { RateComponent } from './rate/rate.component';
-import { OpenExternalLinksInNewTabDirective } from './open-external-links-in-new-tab.directive';
-import { ProductImagesPipe } from './product-images.pipe';
-import { TabViewComponent } from './tab-view/tab-view.component';
-import { TabComponent } from './tab/tab.component';
+import {UserWidgetComponent} from './user-widget/user-widget.component';
 
 @NgModule({
 	imports: [
@@ -72,10 +68,6 @@ import { TabComponent } from './tab/tab.component';
     NotfoundComponent,
     GalleryComponent,
     LoadingComponent,
-    LoginComponent,
-    RegisterComponent,
-    ProfileComponent,
-    CartComponent,
     GatewayResultComponent,
     RateComponent,
     OpenExternalLinksInNewTabDirective,
