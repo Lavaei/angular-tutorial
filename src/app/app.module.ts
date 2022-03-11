@@ -40,7 +40,7 @@ import {UserWidgetComponent} from './user-widget/user-widget.component';
 
 @NgModule({
 	imports: [
-		BrowserModule,
+		BrowserModule.withServerTransition({ appId: 'serverApp' }),
 		BrowserAnimationsModule,
 		FormsModule,
 		ReactiveFormsModule,

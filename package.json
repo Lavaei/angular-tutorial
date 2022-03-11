@@ -7,7 +7,11 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "dev:ssr": "ng run simple-shop:serve-ssr",
+    "serve:ssr": "node dist/simple-shop/server/main.js",
+    "build:ssr": "ng build && ng run simple-shop:server",
+    "prerender": "ng run simple-shop:prerender"
   },
   "private": true,
   "dependencies": {
@@ -18,7 +22,10 @@
     "@angular/forms": "~13.2.6",
     "@angular/platform-browser": "~13.2.6",
     "@angular/platform-browser-dynamic": "~13.2.6",
+    "@angular/platform-server": "~13.2.6",
     "@angular/router": "~13.2.6",
+    "@nguniversal/express-engine": "^13.0.2",
+    "express": "^4.15.2",
     "primeflex": "^2.0.0",
     "primeng": "^13.2.0",
     "primeicons": "^5.0.0",
@@ -30,6 +37,8 @@
     "@angular-devkit/build-angular": "~13.2.6",
     "@angular/cli": "~13.2.6",
     "@angular/compiler-cli": "~13.2.6",
+    "@nguniversal/builders": "^13.0.2",
+    "@types/express": "^4.17.0",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
